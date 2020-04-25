@@ -1,7 +1,8 @@
 // Require de FS
 const fs = require('fs');
 // Leyendo y parseando (en array) el contenido de heroes.json. __dirname te trae el directorio completo, la ruta del archivo completo.
-let heroes = JSON.parse(fs.readFileSync('../data/héroes.json', 'utf-8'));
+
+let heroes = JSON.parse(fs.readFileSync('./data/heroes.json', 'utf-8'));
 
 let heroesController = {
 heroes: function (req,res) {
@@ -27,9 +28,8 @@ heroesBio: (req,res) => {
     } else {
     res.send(heroe.nombre + ': Lamento que no desees saber más de mi :(')
     }
-}
     }
-
+    }
 }
 
 module.exports = heroesController;
